@@ -1,0 +1,6 @@
+#include <iostream>
+#include <vector>
+#include <algorithm> 
+void azalma_sirasi_ile_nizamla(std::vector<int>& arr) {
+    std::sort(arr.begin(), arr.end(), std::greater<int>());
+}
