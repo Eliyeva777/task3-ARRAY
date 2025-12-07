@@ -1,0 +1,15 @@
+#include <vector>
+#include <limits>
+int en_kicik_musbeti_tap(const std::vector<int>& arr) {
+    int min_musbet = std::numeric_limits<int>::max();
+    bool musbet_tapildi = false;
+    for (int element : arr) {
+        if (element > 0) { 
+            musbet_tapildi = true;
+            if (element < min_musbet) {
+                min_musbet = element;
+            }
+        }
+    }
+    return musbet_tapildi ? min_musbet : -1;
+}
