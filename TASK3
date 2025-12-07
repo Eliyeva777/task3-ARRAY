@@ -1,0 +1,14 @@
+#include <vector>
+#include <algorithm> 
+using namespace std;
+int ilk_son_sifir_arasi_mesafe(const vector<int>& arr) {
+    auto first_zero =find(arr.begin(), arr.end(), 0);
+    if (first_zero == arr.end()) {
+        return 0;
+    }
+    auto last_zero = arr.end();
+    do {
+        last_zero--;
+    } while (last_zero != first_zero && *last_zero != 0);
+    return distance(first_zero, last_zero);
+}
