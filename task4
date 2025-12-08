@@ -1,0 +1,29 @@
+#include <vector>
+#include <cmath> 
+#include <iostream>
+using namespace std;
+pair<double, double> orta_hesabla_20(const vector<int>& arr) {
+    if (arr.size() != 20) 
+        cerr << "Massiv 20 elementli olmalıdır." <<endl;
+        return {0.0, 0.0};
+    }
+    const int YARI_OLCU = 10;
+    double ededi_orta_cem = 0.0;
+    for (int i = 0; i < YARI_OLCU; ++i) {
+        ededi_orta_cem += arr[i];
+    }
+    double ededi_orta = ededi_orta_cem / YARI_OLCU;
+    double log_cem = 0.0;
+    for (int i = YARI_OLCU; i < arr.size(); ++i) {
+        if (arr[i] <= 0) {
+          cerr << "Həndəsi orta üçün elementlər müsbət olmalıdır!" <<endl;
+            return {ededi_orta, 0.0};
+        }
+        log_cem += log(arr[i]);
+}
+    double hendesi_orta =exp(log_cem / YARI_OLCU);
+
+    return {ededi_orta, hendesi_orta};
+}
+
+*/
