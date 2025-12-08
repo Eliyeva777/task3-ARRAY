@@ -1,0 +1,16 @@
+#include <vector>
+#include <iostream>
+using namespace std;
+int serti_odeyen_elementlerin_cemi(const vector<int>& a, int b, int c) {
+    if (a.size() != 10) {
+        cerr << "Massiv 10 elementli olmalıdır." << endl;
+        return 0;
+    }
+    int cem = 0;
+    for (int element : a) {
+        if (element > b && element < c) {
+            cem += element;
+        }
+    }
+    return cem;
+}
