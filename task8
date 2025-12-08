@@ -1,0 +1,38 @@
+#include <vector>
+#include <algorithm> 
+#include <cmath>
+#include <iostream>
+#include <limits>
+using namespace std;
+struct Ortalar {
+    int maksimum;
+    int minimum;
+    double ededi_orta;
+    double hendesi_orta;
+};
+Ortalar max_min_ortalar_25(const vector<int>& arr) {
+    if (arr.size() != 25 || arr.empty()) {
+      cout << "Massiv 25 elementli olmalıdır." << endl;
+        return {0, 0, 0.0, 0.0};
+    }
+    Ortalar result;
+    result.maksimum = *max_element(arr.begin(), arr.end());
+    result.minimum = *min_element(arr.begin(), arr.end());
+    long long cem = 0;
+    double log_cem = 0.0;
+    const int N = 25;
+    for (int element : arr) {
+        cem += element; 
+        if (element <= 0) {
+            cout << "Həndəsi orta üçün elementlər müsbət olmalıdır!" << endl;
+            result.hendesi_orta = 0.0;
+            result.ededi_orta = (double)cem / N;
+            return result;
+        }
+        log_cem += std::log(element);
+    }
+    result.ededi_orta = (double)cem / N;
+    result.hendesi_orta = exp(log_cem / N);
+    return result;
+}
+*/
