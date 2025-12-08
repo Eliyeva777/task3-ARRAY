@@ -1,0 +1,13 @@
+#include <vector>
+#include <algorithm> // max_element, swap üçün
+#include <iostream>
+using namespace std;
+void maksimumlari_deyish(vector<int>& a,vector<int>& b) {
+    if (a.empty() || b.empty()) {
+        cerr << "Hər iki massiv boş ola bilməz." <<endl;
+        return;
+    }
+    auto max_a_it = std::max_element(a.begin(), a.end());
+    auto max_b_it = std::max_element(b.begin(), b.end());
+    swap(*max_a_it, *max_b_it);
+}
