@@ -1,0 +1,10 @@
+#include <vector>
+#include <iostream>
+using namespace std;
+void massivleri_birleshdir(vector<int>& a, const vector<int>& b, size_t k) {
+    if (k > a.size()) {
+        cerr<< "k indeksi massivin ölçüsündən kənardadır." <<endl;
+        return;
+    }
+    a.insert(a.begin() + k, b.begin(), b.end());
+}
